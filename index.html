@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We are Hammers</title>
+    <style>
+        /* Colors */
+        :root {
+            --primary-color: #2e1308; /* Dark brown */
+            --secondary-color: #5d4037; /* Dark brown */
+            --accent-color: #FFC107; /* Yellow */
+            --background-color: #212121; /* Dark gray */
+            --text-color: #fff; /* White */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            text-align: center;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        .team-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .member-card {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            max-width: 300px;
+            opacity: 0;
+            transition: opacity 0.5s ease, background-color 0.5s, box-shadow 0.5s;
+        }
+
+        .member-card:hover {
+            transform: scale(1.05);
+        }
+
+        .member-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .member-card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .member-card p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            text-align: center;
+            border-top-right-radius: 80px;
+            border-top-left-radius: 80px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        /* Tagline popup animation */
+        @keyframes popup {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #tagline {
+            font-size: 18px;
+            margin-top: 10px;
+            animation: popup 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Team Logo" class="team-logo">
+        <h1 style="font-size: 36px; font-weight: bold;">Team Hammers</h1>
+        <p id="tagline">We are hammering through obstacles, one swing at a time</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a 9-member team formed for the MPower training session and workshop</p>
+        </section>
+        <section id="team">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <!-- Member cards will be dynamically generated here -->
+                <div class="member-card">
+                    <img src="member1.jpg" alt="Member 1">
+                    <h3>Member 1</h3>
+                    <p>Role: Developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+                </div>
+                <div class="member-card">
+                    <img src="member2.jpg" alt="Member 2">
+                    <h3>Member 2</h3>
+                    <p>Role: Designer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+                </div>
+                <!-- Add more member cards as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p style="font-size: 14px;">&copy; 2024 DataVoid Innovators. All rights reserved.</p>
+    </footer>
+    <script>
+        const teamMembers = [
+            { name: "Member 1", role: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.", image: "member1.jpg" },
+            { name: "Member 2", role: "Designer", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.", image: "member2.jpg" },
+            // Add more members as needed
+        ];
+
+        const teamContainer = document.querySelector('.team-members');
+
+        teamMembers.forEach(member => {
+            const memberCard = document.createElement('div');
+            memberCard.classList.add('member-card');
+            memberCard.innerHTML = `
+                <img src="${member.image}" alt="${member.name}" class="member-image" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;">
+                <h3 style="font-size: 20px; margin-bottom: 10px;">${member.name}</h3>
+                <p><strong>Role:</strong> ${member.role}</p>
+                <p style="font-size: 14px;">${member.bio}</p>
+            `;
+            teamContainer.appendChild(memberCard);
+        });
+
+        // Trigger animation when the team section is scrolled into view
+        const teamSection = document.getElementById('team');
+
+        window.addEventListener('scroll', () => {
+            const teamSectionPos = teamSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (teamSectionPos < windowHeight / 1.5) {
+                const memberCards = document.querySelectorAll('.member-card');
+                memberCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = 1;
+                    }, index * 200); // Delay each card's animation
+                });
+                teamContainer.style.opacity = 1;
+            }
+        });
+    </script>
+</body>
+</html>
