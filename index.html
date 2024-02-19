@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We are Hammers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <style>
         /* Colors */
         :root {
@@ -57,6 +58,21 @@
             width: 80px;
             height: auto;
             margin-bottom: 10px;
+        }
+
+        .social-media {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .social-media a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .social-media a:hover {
+            color: var(--accent-color);
         }
 
         main {
@@ -147,30 +163,23 @@
     <header>
         <img src="logo.png" alt="Team Logo" class="team-logo">
         <h1 style="font-size: 36px; font-weight: bold;">Team Hammers</h1>
+        
         <p id="tagline">We are hammering through obstacles, one swing at a time</p>
     </header>
     <main>
         <section id="about">
             <h2>About Us</h2>
             <p>We are a 9-member team formed for the MPower training session and workshop</p>
+            <div class="social-media">
+            <a href="https://datavoid.in" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://datavoid.in" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://datavoid.in" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
         </section>
         <section id="team">
             <h2>Our Team</h2>
             <div class="team-members">
-                <!-- Member cards will be dynamically generated here -->
-                <div class="member-card">
-                    <img src="member1.jpg" alt="Member 1">
-                    <h3>Member 1</h3>
-                    <p>Role: Developer</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
-                </div>
-                <div class="member-card">
-                    <img src="member2.jpg" alt="Member 2">
-                    <h3>Member 2</h3>
-                    <p>Role: Designer</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
-                </div>
-                <!-- Add more member cards as needed -->
+                
             </div>
         </section>
     </main>
