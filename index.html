@@ -187,9 +187,10 @@
         <p style="font-size: 14px;">&copy; 2024 Team Hammers. All rights reserved.</p>
     </footer>
     <script>
-        function openWebpage(url) {
-    window.open(url, '_blank'); // Open the URL in a new tab
-}
+        document.addEventListener("DOMContentLoaded", function() {
+            function openWebpage(url) {
+                window.open(url, '_blank'); // Open the URL in a new tab
+            }
         const teamMembers = [
             { name: "Gouri Nandana", role: "Captain", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "g.jpeg", url: "https://hammers.datavoid.in/gouri.html"},
             { name: "Ron Siby", role: "Vice Captain", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "ron.jpeg",url: "https://hammers.datavoid.in/ronsiby.html" },            
