@@ -187,16 +187,19 @@
         <p style="font-size: 14px;">&copy; 2024 Team Hammers. All rights reserved.</p>
     </footer>
     <script>
+        function openWebpage(url) {
+    window.open(url, '_blank'); // Open the URL in a new tab
+}
         const teamMembers = [
-            { name: "Gouri Nandana", role: "Captain", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "g.jpeg" },
-            { name: "Ron Siby", role: "Vice Captain", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "ron.jpeg" },            
-            { name: "Jace Joji", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "jace.jpeg" },
-            { name: "Jerald Mathews Jomy", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "jerald.jpeg" },
-            { name: "Aswathy Ravindran", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "as.jpeg" },
-            { name: "Abhimanyu R", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "ab.jpeg" },
-            { name: "Bechu Kurian Benny", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "b.jpeg" },
-            { name: "Darrel Sussan", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "d.jpeg" },
-            { name: "Diya Ann", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "diya.jpeg" },           
+            { name: "Gouri Nandana", role: "Captain", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "g.jpeg", url: "https://hammers.datavoid.in/gouri.html"},
+            { name: "Ron Siby", role: "Vice Captain", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "ron.jpeg",url: "https://hammers.datavoid.in/ronsiby.html" },            
+            { name: "Jace Joji", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "jace.jpeg",url: "https://hammers.datavoid.in/jacejoji.html" },
+            { name: "Jerald Mathews Jomy", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "jerald.jpeg",url: "https://hammers.datavoid.in/jerald.html" },
+            { name: "Aswathy Ravindran", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "as.jpeg",url: "https://hammers.datavoid.in/aswathy.html" },
+            { name: "Abhimanyu R", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "ab.jpeg",url: "https://hammers.datavoid.in/abhimanyu.html" },
+            { name: "Bechu Kurian Benny", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "b.jpeg",url: "https://hammers.datavoid.in/bechu.html" },
+            { name: "Darrel Sussan", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "d.jpeg",url: "https://hammers.datavoid.in/darrel.html" },
+            { name: "Diya Ann", role: "Member", bio: "3rd Year Computer Science Student at Viswajyothi College of Engineering and Technology", image: "diya.jpeg",url: "https://hammers.datavoid.in/diya.html" },           
              ];
 
         const teamContainer = document.querySelector('.team-members');
@@ -211,6 +214,9 @@
                 <p style="font-size: 14px;">${member.bio}</p>
             `;
             teamContainer.appendChild(memberCard);
+            memberCard.addEventListener('click', () => {
+        // Open the webpage associated with the member
+        openWebpage(member.url);
         });
 
         // Trigger animation when the team section is scrolled into view
